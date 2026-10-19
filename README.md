@@ -5,7 +5,6 @@ Sistema para gestionar clientes, servicios y reservas de una empresa de servicio
 ## Integrantes
 - Nicolas Jara Ortiz (U23220925)
 - Herbert Morales Bueno (U23310949)
-- Alexander Sanchez Clemente (U24319001)
 
 ## Alcance de la versión 1.0
 - Clientes: registrar, modificar, consultar
