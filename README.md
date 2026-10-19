@@ -5,7 +5,6 @@ Sistema para gestionar clientes, servicios y reservas de una empresa de servicio
 ## Integrantes
 - Nicolas Jara Ortiz (U23220925)
 - Herbert Morales Bueno (U23310949)
-- Alexander Sanchez Clemente (U24319001)
 
 ## Alcance de la versión 1.0
 - Clientes: registrar, modificar, consultar
@@ -16,4 +15,4 @@ Sistema para gestionar clientes, servicios y reservas de una empresa de servicio
 Recordatorios automáticos, reportes, dashboard de indicadores, pagos en línea, historial de clientes.
 
 ## Tablero de actividades
-enlace al tablero
+https://github.com/users/U23220925/projects/3/views/1
