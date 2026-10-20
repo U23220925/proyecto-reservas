@@ -1,6 +1,6 @@
 # Sistema de Gestión de Reservas
 
-Sistema para gestionar clientes, servicios y reservas de una empresa de servicios.
+Aplicación web para administrar las reservas de una empresa de servicios, construida como proyecto del curso Herramientas de Desarrollo.
 
 ## Integrantes
 - Nicolas Jara Ortiz (U23220925)
