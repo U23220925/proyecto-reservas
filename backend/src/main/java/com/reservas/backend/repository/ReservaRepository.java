@@ -22,13 +22,13 @@ public interface ReservaRepository extends JpaRepository<Reserva, Long> {
     Optional<Reserva> findByIdAndEstado(Long id, String estado);
 
     /**
-     * Encuentra reservas de un servicio cuyo intervalo [fechaReserva, fechaReserva + duración]
-     * se superponga con el intervalo [nuevaFechaStart, nuevaFechaFin].
+     * Encuentra reservas de un servicio cuyo intervalo se superponga.
+     * Versión limpia: Utiliza operadores lógicos estándar totalmente compatibles con PostgreSQL e Hibernate.
      */
-    @Query("SELECT r FROM Reserva r JOIN r.servicio s " +
-            "WHERE s.id = :servicioId " +
-            "AND r.fechaReserva < :nuevaFechaFin " +
-            "AND FUNCTION('TIMESTAMPADD', 'SECOND', s.duracionMinutos * 60, r.fechaReserva) > :nuevaFechaStart")
+    @Query("SELECT r FROM Reserva r WHERE r.servicio.id = :servicioId " +
+           "AND r.estado != 'CANCELADA' " +
+           "AND ((r.fechaReserva >= :nuevaFechaStart AND r.fechaReserva < :nuevaFechaFin) " +
+           "OR (r.fechaReserva <= :nuevaFechaStart))")
     List<Reserva> findReservasSolapadas(@Param("servicioId") Long servicioId,
                                         @Param("nuevaFechaStart") LocalDateTime nuevaFechaStart,
                                         @Param("nuevaFechaFin") LocalDateTime nuevaFechaFin);
