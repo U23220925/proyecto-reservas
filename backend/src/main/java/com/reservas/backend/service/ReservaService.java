@@ -70,8 +70,7 @@ public class ReservaService {
         reserva.setCliente(cliente);
         reserva.setServicio(servicio);
         reserva.setFechaReserva(fechaReserva);
-        reserva.setEstado(reservaDTO.getEstado() != null && !reservaDTO.getEstado().isBlank()
-                ? reservaDTO.getEstado() : "PENDIENTE");
+        reserva.setEstado("PENDIENTE");
         reserva.setNotas(reservaDTO.getNotas());
 
         Reserva reservaGuardada = reservaRepository.save(reserva);
@@ -118,6 +117,9 @@ public class ReservaService {
     public void cancelarReserva(Long id) {
         Reserva reserva = reservaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Reserva no encontrada con ID: " + id));
+        if ("CANCELADA".equals(reserva.getEstado())) {
+            throw new RuntimeException("La reserva ya se encuentra cancelada");
+        }
         reserva.setEstado("CANCELADA");
         reservaRepository.save(reserva);
     }
