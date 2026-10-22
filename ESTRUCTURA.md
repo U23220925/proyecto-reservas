@@ -1,6 +1,6 @@
 # Estructura del Proyecto - Sistema de Gestión de Reservas
 
-## 📁 Estructura de Archivos Creados
+## Estructura de Archivos Creados
 
 ```
 backend/src/main/java/com/reservas/backend/
@@ -23,24 +23,24 @@ backend/src/main/java/com/reservas/backend/
     └── GlobalExceptionHandler.java      # Manejo global de excepciones
 ```
 
-## 🎯 Funcionalidades Implementadas
+## Funcionalidades Implementadas
 
-### 👥 Gestión de Clientes
+### Gestión de Clientes
 
-#### ✅ Registrar Cliente
+####  Registrar Cliente
 **Endpoint:** `POST /api/clientes`
 - Registra nuevos clientes con validación de datos
 - Campos requeridos: nombre, apellido, email, teléfono
 - Email único en el sistema
 - Valida formato de email y teléfono
 
-#### ✅ Modificar Información de Cliente
+#### Modificar Información de Cliente
 **Endpoint:** `PUT /api/clientes/{id}`
 - Actualiza información de cliente existente
 - Valida que el email no esté duplicado
 - Mantiene registro de fecha de creación
 
-#### ✅ Consultar Clientes
+#### Consultar Clientes
 **Endpoints:**
 - `GET /api/clientes` - Lista todos los clientes
 - `GET /api/clientes/{id}` - Cliente específico por ID
@@ -51,9 +51,9 @@ backend/src/main/java/com/reservas/backend/
 - Búsqueda parcial (contiene)
 - Insensible a mayúsculas/minúsculas
 
-### 🛠️ Gestión de Servicios
+### Gestión de Servicios
 
-#### ✅ Registrar Servicio
+#### Registrar Servicio
 **Endpoint:** `POST /api/servicios`
 - Registra nuevos servicios
 - Campos requeridos: nombre, categoría, precio, duración
@@ -61,7 +61,7 @@ backend/src/main/java/com/reservas/backend/
 - Precio debe ser > 0
 - Duración mínima 1 minuto
 
-#### ✅ Establecer Precio y Duración
+#### Establecer Precio y Duración
 **Endpoints:**
 - `PUT /api/servicios/{id}` - Actualiza servicio completo
 - `PATCH /api/servicios/{id}/precio-duracion` - Actualiza solo precio y duración
@@ -70,7 +70,7 @@ backend/src/main/java/com/reservas/backend/
 - Precio debe ser mayor a 0
 - Duración mínima 1 minuto
 
-#### ✅ Consultar Servicios
+#### Consultar Servicios
 **Endpoints:**
 - `GET /api/servicios` - Lista servicios (filtrable por activos)
 - `GET /api/servicios/{id}` - Servicio específico por ID
@@ -83,7 +83,7 @@ backend/src/main/java/com/reservas/backend/
 - Filtrado por rango de precio
 - Servicios activos/inactivos
 
-## 🔧 Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **Spring Boot 4.1.1** - Framework principal
 - **Java 21** - Versión de lenguaje
@@ -93,7 +93,7 @@ backend/src/main/java/com/reservas/backend/
 - **PostgreSQL** - Base de datos
 - **Maven** - Gestión de dependencias
 
-## 📊 Base de Datos
+## Base de Datos
 
 ### Tabla: clientes
 ```sql
@@ -118,7 +118,7 @@ backend/src/main/java/com/reservas/backend/
 - fecha_creacion (TIMESTAMP, NOT NULL)
 ```
 
-## 🚀 Cómo Iniciar
+## Cómo Iniciar
 
 ### 1. Configurar Base de Datos
 Asegúrate de tener PostgreSQL corriendo en `localhost:5432` con la base de datos `reservas`.
@@ -134,7 +134,7 @@ mvn spring-boot:run
 ### 3. Probar Endpoints
 La aplicación estará disponible en: `http://localhost:8080`
 
-## 📝 Ejemplos de Uso
+## Ejemplos de Uso
 
 ### Registrar un Cliente
 ```bash
@@ -161,13 +161,3 @@ curl -X POST http://localhost:8080/api/servicios \
     "duracionMinutos": 45
   }'
 ```
-
-### Actualizar Precio y Duración
-```bash
-curl -X PATCH "http://localhost:8080/api/servicios/1/precio-duracion?precio=55.00&duracionMinutos=50"
-```
-
-## 📚 Documentación Adicional
-
-- Ver `docs/API.md` para documentación completa de la API
-- Ver `backend/src/main/resources/application.properties` para configuración
