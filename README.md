@@ -1,6 +1,6 @@
 # Sistema de Gestión de Reservas
 
-Sistema para gestionar clientes, servicios y reservas de una empresa de servicios.
+Sistema web para gestionar clientes, servicios y reservas de una empresa de servicios, desarrollado con Spring Boot y PostgreSQL.
 
 ## Integrantes
 - Nicolas Jara Ortiz (U23220925)
