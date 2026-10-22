@@ -1,6 +1,6 @@
 # Sistema de Gestión de Reservas
 
-Aplicación web para administrar las reservas de una empresa de servicios, construida como proyecto del curso Herramientas de Desarrollo.
+Sistema web para gestionar clientes, servicios y reservas de una empresa de servicios, desarrollado con Spring Boot y PostgreSQL como proyecto del curso Herramientas de Desarrollo.
 
 ## Integrantes
 - Nicolas Jara Ortiz (U23220925)
