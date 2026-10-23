@@ -4,17 +4,21 @@ import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.NotNull;
 
 public class ReservaDTO {
 
     private Long id;
 
-    @Min(value = 1, message = "El ID del cliente es obligatorio")
+    @NotNull(message = "El cliente es obligatorio")
+    @Min(value = 1, message = "El ID del cliente debe ser mayor a 0")
     private Long clienteId;
 
-    @Min(value = 1, message = "El ID del servicio es obligatorio")
+    @NotNull(message = "El servicio es obligatorio")
+    @Min(value = 1, message = "El ID del servicio debe ser mayor a 0")
     private Long servicioId;
 
+    @NotBlank(message = "La fecha y hora de la reserva es obligatoria")
     private String fechaReserva; // formato: "yyyy-MM-dd HH:mm:ss"
 
     @Size(max = 500, message = "Las notas no pueden exceder 500 caracteres")
